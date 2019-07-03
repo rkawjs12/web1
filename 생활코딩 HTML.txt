@@ -1,0 +1,149 @@
+텍스트 에디터: atom
+
+#Tag
+<></>	: 이러한 형태의 html 문법을 tag(태그)라고 한다.
+	: 태그의 형식은 <>와 </> 사이에 글자를 가지고 있으며, 사이에 있는 글자가 태그의 영향을 받는다.
+	: </>는 태그의 끝을 의미한다
+
+#Tag목록
+<h1> 		: head의 약자로 1은 크기를 의미한다. 1~8까지의 숫자가 있으며, 숫자가 커질수록 글자의 크기는 작아진다.
+<strong>		: 글자의 굵기를 굵게 표현해 주는 tag 명령어
+<u>		: 글자의 밑에 밑줄을 그어주는 tag 명령어
+
+<br>		: 새로운 줄을 표현할 떄 쓰는 tag 명령어. 줄바꿈이라고 생각하면 된다.
+		: 닫지 않는 태그로, 일반적인 태그의 경우 </>로 태그를 닫아주는데, <br>의 경우에는 중간에 해당하는 내용이 없이, 줄을 바꾸는 명령어로, <br/>를 써서 tag를 닫을 필요가 없다.
+
+<p>		: 단락(paragragh)를 표현하는 tag 명령어
+		: <p>의 경우 단락을 구별해주기 때문에 <br> tag와 같은 결과를 가지는 것 같지만, 실제로는 <p>는 문단을 구별했기 때문에 단순히 줄바꿈 tag와는 다르다.
+		: 문단을 구분해야할 경우에는 <br>보단 <p>를 쓰는게 좋다. 예를 들면 문장의 길이가 길어서 다음 페이지에 적용을 해야한다면 <p>로 해야 문단이 다같이 다음 페이지에 표현된다.
+
+#<br>과 <p>의 관계에서 본 css의 필요성
+<br>은 줄바꿈 tag 명령어, <p>는 문단을 구별해주는 명령어인데, <p>의 경우는 문단 사이의 간격을 설정할 수 없다. 그래서 css라는 기술을 사용하여 <p>의 한계를 극복할 수 있다.
+HTML은 정보를 의미한다면, CSS는 정보를 꾸며준다.
+<p style="margin-top:45px;"> : <p> tag에 css 기술인 style="margin-top:45px;" 를 입력하여 문단 사이의 간격을 45px로 설정했다.
+
+#HTML의 중요성:	네이버 지식인의 경우, 일반인과 HTML을 알고 있는 사람과의 차이
+<h3>coding</h3>	, <strong><span style="font-size:22px;">coding</span></strong>
+2개의 명령어는 네이버 지식인에서 작성된 것인 <h3>coding</h3>은 format을 활용하여 제목이라고 설정한 것에 비해, <strong><span style="font-size:22px;">coding</span></strong>는 글짜의 크기와 굵기를 설정한 것이다.
+
+위의 두개의 명령어는 모두 같은 시각적 글씨를 출력한다. 하지만 <strong><span style="font-size:22px;">coding</span></strong>의 경우는 본문을 제목의 글짜처럼 꾸민것에 비해, <h3>coding</h3>는 제목을 의미한다.
+인터넷 창에 "coding" 이라는 글자를 쳤을 경우 <h3>coding</h3>는 제목에 coding 글자가 있어 <strong><span style="font-size:22px;">coding</span></strong>에 비해 먼저 검색어에 나타난다.
+즉, html을 알고 있으면 정보의 우선순위에서 앞자리에 위치할 수 있다. 코드의 중요성이다.
+
+웹의 핵심적인 철학은 접근성. 웹은 모든 운영체제에서 동작하고, 웹페이지의 소스코드는 누구나 볼 수 있다.
+
+
+#최후의 문법 속성과 img
+<image>		: 이미지를 넣는 tag 명령어. 하지만 본문에 이렇게만 코드를 작성하면 이미지가 나오지 않는다. 그 이유는 어떠한 이미지를 넣을 것인가에 대한 정보가 없어서 그렇다.
+		: 사람들은 태그만으론 정보가 부족하다는 것을 알게 되었고, 이로 인해 나타난 것이 "속성(attribute)" 문법이다.
+		: <img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7648.png">
+		: <img 속성 = 속성값> 	https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7648.png는 이미지의 주소값
+
+이미지가 인터넷 주소상에 있지 않고, 내 컴퓨터에 있는 이미지를 사용하고자 한다면, 작성중인 웹 프로그래밍 파일이 있는 폴더에 올리고자 하는 이미지를 넣는다.
+그리고 위의 이미지 tag에 속성값에서 이미지 이름을 넣으면 된다.
+
+<img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7648.png" width="100%">
+이미지의 크기를 조정하려면 width라는 속성을 사용하면 된다.
+
+
+#부모 자식과 목록
+<li>		: 목록을 나타내는 tag 명령어
+<ul>		: 목록을 구분하는 tag 명령어. unordered list -> 목록에 1. ~~, 2.~~ 와 같은 숫자가 입력되지 않는다.
+<ol>		: 목록을 구분하는 tag 명령어. ordered list -> 목록에 1. ~~, 2.~~ 와 같은 숫자가 입력된다.
+
+
+#문서의 구조와 슈퍼스타들
+정보가 많아짐에 따라서 정보를 잘 정리정돈 하기 위한 체계, 다시말해 구조가 필요하다.
+<title>		: 웹 페이지의 제목을 설정하는  tag 명령어.
+		: <title> tag는 검색엔진이 웹페이지를 분석할 때 가장 중요한 tag이다.
+
+<meta charset="utf-8"	: 이 웹페이지는 UTF-8로 만들어졌기 떄문에 UTF-8로 열어야 한다는 것을 알려주는 정보.
+			: 영어가 아닌 문자가 꺠지는 이유는 웹페이지가 저장된 문자 표현 방식과 웹브라우저가 웹페이지를 해석하는 방법이 일치하지 않을 때, 문자가 이상한 문자로 표시된다.
+
+<head>		: title, meta charset="utf-8" 과 같은 본문을 설명하는 정보가 들어있는 tag 명령문
+<body>		: 웹 페이지의 본문이 들어가 있는 tag 명령어
+<html>		: <head>,<body> tag를 감싸는 <html> tag 명령어
+<!doctype html>	: 이 웹페이지가 HTML로서 만들어졌다는 것을 표현하기 위해서 문서의 시작에 쓰이는 tag 명령어
+
+ 
+#HTML 태그의 제왕
+HTML의 약자 HyperText Markup Language에서 HyperText
+
+<a>		: anchor의 첫글자 a이다. 정보의 바다에 정박한다는 의미의 시적인 표현. 링크.
+		: <a href="https://www.w3.org/TR/html5/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a>
+		: href는 HyperText Reference의 약자이다.
+		: target="_blank"는 링크를 클릭했을 때, 새창에서 페이지가 열리게 하는 속성
+		: title="html5 specification" 이 랭크가 어떤 내용을 담고 있는지를 툴팁으로 보여주는 기능
+
+
+#웹사이트 완성
+링크를 통해서 서로 결합되어 있는 웹페이지들의 그룹을 웹에선 웹사이트(web site)라고 한다.
+
+
+#원시웹
+웹프로그래밍은 2개의 산이 있다. 1가지 산은 웹사이트를 만드는 것, 다른 1가지 산은 내가 만든 웹사이트를 누구나 가져갈 수 있게 만드는 것
+인터넷과 웹은 다른 개념이다. 인터넷은 도시라면 웹은 도시 위에 있는 건물 하나.
+
+
+#인터넷을 여는 열쇠 : 서버와 클라이언트
+클라이언트	: 요청하는 컴퓨터
+서버		: 제공하는 컴퓨터
+
+
+#웹호스팅 (github pages)
+호스트		: 인터넷에 연결된 하나의 컴퓨터
+호스팅 		: 인터넷에 연결된 컴퓨터를 빌려주는 사업
+웹호스팅		: 웹서버를 전문적으로 빌려주는 비즈니스
+
+github를 이용하여 웹호스팅을 사용했다.
+
+
+#웹서버 운영하기
+웹서버는 제품군이다. 웹서버에는 많은 제품이 있다. 그 중 apache
+how to install apache http server os <- 검색어
+
+
+#웹서버 운영 : 윈도우
+C:\Bitnami\wampstack-7.3.6-2		<- bitnami가 깔려있는 위치
+PassWord1234				<- bitnami에서 mysql을 사용할 때 쓰이는 비밀번호
+3307					<- mysql 포트번호
+
+bitnami라는 프로그램을 사용하여 apache를 설치하는 과정
+bitnami manager 				<- bitnami를 통해 설치한 여러 프로그램들을 관라히기 쉽게 만들어준다.
+
+http://127.0.0.1/index.html			<- ip address인데 자기 자신의 주소를 가르키는 주소로 일명 대명사와 같은 것이라고 생각하면 된다.
+http://localhost/index.html			<-도메인 네임(domain name)
+
+index.html라는 파일은 bitnami wampstack이 설치된 디렉토리에 apache -> htdocs -> index.html의 파일이다
+htdocs는 hypertext documents의 약자로 웹페이지가 저장된 디렉토리라는 의미
+http://는 HyperText Transfer Protocal의 약자. Transfer는 전송이라는 뜻. 즉, 웹페이지를 전송하기 위해서 만든 통신 규약이라는 뜻
+
+웹브라우저가 웹서버에 접속하기 위해서는 웹서버가 설치된 컴퓨터의 주소(ip 주소)를 알아야 한다. 
+
+1억개의 웹페이지로 만들어진 싸이트에서 h1의 태그를 h2 태그로 바꿔야 한다면 1개 바꾸는데 0.1초가 걸린다면 115일이 필요하다.
+이러한 문제를 해결하기 위해 배워야하는 것이 백엔드 기술이며, PHP, JSP, Nodejs Express, Python Django, Ruby on Rails, ASP.net 등이 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
